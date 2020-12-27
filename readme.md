@@ -5,6 +5,8 @@ LaraQuiz was mostly generated with __QuickAdmin__ except for some custom code.
 
 It's an open-source version of online Laravel quiz at [LaraQuiz.com](http://laraquiz.com) - but the system can be used for any quiz project, you just fill in different topics and questions.
 
+![LaraQuiz screenshot](https://github.com/naimurhasan/laraquiz-csv-import-to-frontend/blob/master/screenshot.png)
+
 __Notice__: originally created with Laravel 5.3, it was upgraded to Laravel 5.6 in March 2018.
 
 ## Clickable live-demo
