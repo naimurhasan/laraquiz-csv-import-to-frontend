@@ -5,6 +5,7 @@
 
     <p>
         <a href="{{ route('questions.create') }}" class="btn btn-success">@lang('quickadmin.add_new')</a>
+        <a href="{{ route('questions.create_multiple') }}" class="btn btn-success">@lang('quickadmin.create_multiple')</a>
     </p>
 
     <div class="panel panel-default">

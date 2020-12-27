@@ -49,6 +49,24 @@ class QuestionsController extends Controller
         return view('questions.create', compact('correct_options') + $relations);
     }
 
+    public function create_multiple()
+    {
+        $relations = [
+            'topics' => \App\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
+        ];
+
+        $correct_options = [
+            'option1' => 'Option #1',
+            'option2' => 'Option #2',
+            'option3' => 'Option #3',
+            'option4' => 'Option #4',
+            'option5' => 'Option #5'
+        ];
+        
+        return view('questions.create_multiple', compact('correct_options') + $relations);
+    }
+    
+
     /**
      * Store a newly created Question in storage.
      *
@@ -73,6 +91,8 @@ class QuestionsController extends Controller
 
         return redirect()->route('questions.index');
     }
+
+
 
 
     /**

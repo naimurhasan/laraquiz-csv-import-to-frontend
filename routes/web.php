@@ -1,7 +1,11 @@
 <?php
+
+Route::get('/bcs_quiz', 'BCSQuizController@bcs_quiz');
+
 Route::get('/', function () {
     return redirect('/home');
 });
+
 
 // Auth::routes();
 
@@ -28,15 +32,19 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 
 Route::group(['middleware' => 'auth'], function () {
+    
     Route::get('/home', 'HomeController@index');
     Route::resource('tests', 'TestsController');
     Route::resource('roles', 'RolesController');
     Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
-    Route::resource('users', 'UsersController');
+        Route::resource('users', 'UsersController');
     Route::post('users_mass_destroy', ['uses' => 'UsersController@massDestroy', 'as' => 'users.mass_destroy']);
     Route::resource('user_actions', 'UserActionsController');
     Route::resource('topics', 'TopicsController');
     Route::post('topics_mass_destroy', ['uses' => 'TopicsController@massDestroy', 'as' => 'topics.mass_destroy']);
+    // Route Added By Naimur
+    Route::get('questions/create_multiple', 'QuestionsController@create_multiple')->name('questions.create_multiple');;
+    // End Route added by Naimur
     Route::resource('questions', 'QuestionsController');
     Route::post('questions_mass_destroy', ['uses' => 'QuestionsController@massDestroy', 'as' => 'questions.mass_destroy']);
     Route::resource('questions_options', 'QuestionsOptionsController');
